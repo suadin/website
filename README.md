@@ -27,6 +27,11 @@
 * update database `cd Suadin`, `dotnet ef database update`
 * run app within docker
 
+## Deployment
+* grant repo `suadin/website` to github-package `website` to release image to github
+* add into repo `suadin/website` secrets `DOCKER_HUB_USER` and `DOCKER_HUB_PASSWORD` to release image to dockerhub
+* add into repo `suadin/website` secret `SERVER_PASSWORD` to deploy released image to server
+
 ## Sources
 * Prerequisites
   * [How to configure PostgreSQL to accept all incoming connections](https://stackoverflow.com/questions/3278379/how-to-configure-postgresql-to-accept-all-incoming-connections)
@@ -36,3 +41,4 @@
   * [Safe storage of app secrets in development in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows)
 * Development
   * [How to Configure PostgreSQL in Entity Framework Core](https://code-maze.com/configure-postgresql-ef-core/)
+  * [Publishing Docker images](https://docs.github.com/en/actions/publishing-packages/publishing-docker-images)
