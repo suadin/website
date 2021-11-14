@@ -19,7 +19,7 @@
 * PostgreSQL Client: for example `choco install pgadmin4`
 * Dev-Certificate: `dotnet dev-certs https --trust`
 * Entity Framework Core Tools: `dotnet tool install --global dotnet-ef`
-* Secrets: `PostgreSql:DbPassword`
+* Secrets: `PostgreSql:DbPassword`, `Authentication:Google:ClientSecret`
 
 ## Getting Started
 * start docker
@@ -43,3 +43,7 @@
   * [How to Configure PostgreSQL in Entity Framework Core](https://code-maze.com/configure-postgresql-ef-core/)
   * [Publishing Docker images](https://docs.github.com/en/actions/publishing-packages/publishing-docker-images)
   * [EntityFramework Core automatic migrations](https://stackoverflow.com/questions/39526595/entityframework-core-automatic-migrations)
+  * [Google Authentication in Blazor WebAssembly Hosted Applications](https://code-maze.com/google-authentication-in-blazor-webassembly-hosted-applications/)
+  * [Get Current User in a Blazor component](https://stackoverflow.com/questions/60264657/get-current-user-in-a-blazor-component)
+* Open
+  * [Account confirmation and password recovery in ASP.NET Core](https://docs.microsoft.com/de-de/aspnet/core/security/authentication/accconfirm?view=aspnetcore-6.0&tabs=visual-studio)

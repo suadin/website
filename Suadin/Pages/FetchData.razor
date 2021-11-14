@@ -1,6 +1,7 @@
 ﻿@page "/fetchdata"
 
 @using Suadin.Data
+@using Microsoft.AspNetCore.Http;
 @inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
@@ -13,6 +14,10 @@
 }
 else
 {
+    @if (isAuthenticated)
+    {
+        <p>Authenticated detected from c# code in razor file.</p>
+    }
     <table class="table">
         <thead>
             <tr>
@@ -36,11 +41,16 @@ else
     </table>
 }
 
+@inject IHttpContextAccessor httpContextAccessor
 @code {
-    private WeatherForecast[] forecasts;
+    private bool isAuthenticated = false;
+    private IList<WeatherForecast> forecasts;
 
     protected override async Task OnInitializedAsync()
     {
+        if (httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+            isAuthenticated = true;
+
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     }
 }
