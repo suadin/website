@@ -42,3 +42,4 @@
 * Development
   * [How to Configure PostgreSQL in Entity Framework Core](https://code-maze.com/configure-postgresql-ef-core/)
   * [Publishing Docker images](https://docs.github.com/en/actions/publishing-packages/publishing-docker-images)
+  * [EntityFramework Core automatic migrations](https://stackoverflow.com/questions/39526595/entityframework-core-automatic-migrations)
