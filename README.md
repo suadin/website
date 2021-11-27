@@ -19,7 +19,7 @@
 * PostgreSQL Client: for example `choco install pgadmin4`
 * Dev-Certificate: `dotnet dev-certs https --trust`
 * Entity Framework Core Tools: `dotnet tool install --global dotnet-ef`
-* Secrets: `PostgreSql:DbPassword`, `Authentication:Google:ClientSecret`
+* Secrets: `PostgreSql:DbPassword`, `Authentication:Google:ClientSecret`, `SmtpPassword`
 
 ## Getting Started
 * start docker
@@ -45,5 +45,6 @@
   * [EntityFramework Core automatic migrations](https://stackoverflow.com/questions/39526595/entityframework-core-automatic-migrations)
   * [Google Authentication in Blazor WebAssembly Hosted Applications](https://code-maze.com/google-authentication-in-blazor-webassembly-hosted-applications/)
   * [Get Current User in a Blazor component](https://stackoverflow.com/questions/60264657/get-current-user-in-a-blazor-component)
-* Open
   * [Account confirmation and password recovery in ASP.NET Core](https://docs.microsoft.com/de-de/aspnet/core/security/authentication/accconfirm?view=aspnetcore-6.0&tabs=visual-studio)
+    * don't use SendGrid! Instead use SMTP with HTML body, see link below.
+  * [How to send email from C#](http://csharp.net-informations.com/communications/csharp-smtp-mail.htm)
