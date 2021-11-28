@@ -66,7 +66,7 @@ html, body {
     top: 0.5rem;
 }
 
-div, input, p, h1, h2, td, th {
+div, input, p, h1, h2, td, th, hr {
     background-color: var(--background-color);
     border-color: var(--foreground-color);
     color: var(--foreground-color);

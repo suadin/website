@@ -111,7 +111,7 @@
     line-height: 3rem;
 }
 
-.nav-item ::deep a.active {
+.nav-item ::deep a:active {
     background-color: var(--background-color);
     color: var(--foreground-color);
 }

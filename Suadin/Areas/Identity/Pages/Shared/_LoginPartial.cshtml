@@ -3,25 +3,32 @@
 @inject UserManager<IdentityUser> UserManager
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
-}
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
-}
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="p-2 nav-item">
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                <span class="oi oi-person" aria-hidden="true"></span> Hello @User.Identity.Name!
+            </a>
+        </div>
+        <div class="p-2 nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
+                <a class="nav-link" href="/" onclick="this.closest('form').submit();return false;">
+                    <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
+                </a>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="p-2 nav-item">
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">
+                <span class="oi oi-arrow-circle-right" aria-hidden="true"></span> Register
+            </a>
+        </div>
+        <div class="p-2 nav-item">
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">
+                <span class="oi oi-account-login" aria-hidden="true"></span> Login
+            </a>
+        </div>
+    }
 </ul>

@@ -7,34 +7,64 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Suadin</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/Identity/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Identity/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/../Shared/MainLayout.razor.css" />
+    <style>
+        .nav-link {
+            color: var(--foreground-color);
+            border-radius: 4px;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            line-height: 3rem;
+        }
+        .nav-link:hover {
+            background-color: var(--foreground-color);
+            color: var(--background-color);
+        }
+        .oi {
+            width: 2rem;
+            font-size: 1.1rem;
+            vertical-align: text-top;
+            top: -2px;
+        }
+        .nav-item {
+            font-size: 0.9rem;
+            padding-bottom: 0.5rem;
+        }
+        .nav-item:first-of-type {
+            padding-top: 1rem;
+        }
+        .nav-item:last-of-type {
+            padding-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light navbar-toggleable-sm bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" href="~/">Suadin</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    @{
-                        var result = Engine.FindView(ViewContext, "_LoginPartial", isMainPage: false);
-                    }
-                    @if (result.Success)
-                    {
-                        await Html.RenderPartialAsync("_LoginPartial");
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
-                            "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
-                            $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result.SearchedLocations)}.");
-                    }
+        <nav class="container">
+            <div class="d-flex">
+                <div class="mr-auto p-2 nav-item">
+                    <a class="nav-link" href="~/">
+                        <span class="oi oi-home" aria-hidden="true"></span> Home
+                    </a>
                 </div>
+                @{
+                    var result = Engine.FindView(ViewContext, "_LoginPartial", isMainPage: false);
+                }
+                @if (result.Success)
+                {
+                    await Html.RenderPartialAsync("_LoginPartial");
+                }
+                else
+                {
+                    throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
+                        "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
+                        $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result.SearchedLocations)}.");
+                }
             </div>
         </nav>
     </header>
@@ -44,11 +74,6 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="footer border-top text-muted">
-        <div class="container">
-            &copy; 2021 - Suadin - <a asp-area="" asp-page="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/Identity/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/Identity/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/Identity/js/site.js" asp-append-version="true"></script>
