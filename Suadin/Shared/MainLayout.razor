@@ -1,16 +1,52 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <div class="main">
-        <div class="top-row px-4 auth">
-            <LoginDisplay />
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+<div class="page flex-column">
+    <div class="header d-flex">
+        <div class="p-2 nav-item">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
         </div>
-
+        <div class="p-2 nav-item">
+            <NavLink class="nav-link" href="counter">
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            </NavLink>
+        </div>
+        <div class="mr-auto p-2 nav-item">
+            <NavLink class="nav-link" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </div>
+        <AuthorizeView>
+            <Authorized>
+                <div class="p-2 nav-item">
+                    <NavLink class="nav-link" href="Identity/Account/Manage">
+                        <span class="oi oi-person" aria-hidden="true"></span> @context.User.Identity.Name
+                    </NavLink>
+                </div>
+                <div class="p-2 nav-item">
+                    <form method="post" action="Identity/Account/LogOut">
+                        <NavLink class="nav-link" onclick="this.closest('form').submit();return false;">
+                            <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
+                        </NavLink>
+                    </form>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                <div class="p-2 nav-item">
+                    <NavLink class="nav-link" href="Identity/Account/Register">
+                        <span class="oi oi-arrow-circle-right" aria-hidden="true"></span> Register
+                    </NavLink>
+                </div>
+                <div class="p-2 nav-item">
+                    <NavLink class="nav-link" href="Identity/Account/Login">
+                        <span class="oi oi-account-login" aria-hidden="true"></span> Login
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
+    </div>
+    <div class="main">
         <div class="content px-4">
             @Body
         </div>

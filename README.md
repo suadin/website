@@ -48,3 +48,6 @@
   * [Account confirmation and password recovery in ASP.NET Core](https://docs.microsoft.com/de-de/aspnet/core/security/authentication/accconfirm?view=aspnetcore-6.0&tabs=visual-studio)
     * don't use SendGrid! Instead use SMTP with HTML body, see link below.
   * [How to send email from C#](http://csharp.net-informations.com/communications/csharp-smtp-mail.htm)
+  * [Dark Mode - CSS Variables](https://www.reddit.com/r/dotnet/comments/k9ryyw/blazor_webassembly_dark_mode_css_variables/)
+  * [How to Enable Dark Mode in Windows 10](https://uk.pcmag.com/migrated-3765-windows-10/122487/how-to-enable-dark-mode-in-windows-10)
+  * [Dark Mode: OS Level Control In Your CSS](https://www.timellenberger.com/blog/operating-system-dark-mode-in-your-css)
