@@ -34,13 +34,13 @@
 
 ## Sources
 * Prerequisites
-  * [How to configure PostgreSQL to accept all incoming connections](https://stackoverflow.com/questions/3278379/how-to-configure-postgresql-to-accept-all-incoming-connections)
   * [Configure localhost development dev certificate](https://docs.servicestack.net/netcore-localhost-cert)
   * [Entity Framework Core tools reference - .NET Core CLI](https://docs.microsoft.com/en-us/ef/core/cli/dotnet)
   * [PostgreSQL - Create User, Create Database, Grant privileges/access](https://medium.com/@mohammedhammoud/postgresql-create-user-create-database-grant-privileges-access-aabb2507c0aa)
   * [Safe storage of app secrets in development in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows)
 * Development
-  * [How to Configure PostgreSQL in Entity Framework Core](https://code-maze.com/configure-postgresql-ef-core/)
+  * [How to Configure in-memory database with Entity Framework Core](https://exceptionnotfound.net/ef-core-inmemory-asp-net-core-store-database/)
+  * [Auto-Migration not required for in-memory databases](https://stackoverflow.com/questions/54156418/entity-framework-core-migrations-error-using-useinmemorydatabase)
   * [Publishing Docker images](https://docs.github.com/en/actions/publishing-packages/publishing-docker-images)
   * [EntityFramework Core automatic migrations](https://stackoverflow.com/questions/39526595/entityframework-core-automatic-migrations)
   * [Google Authentication in Blazor WebAssembly Hosted Applications](https://code-maze.com/google-authentication-in-blazor-webassembly-hosted-applications/)

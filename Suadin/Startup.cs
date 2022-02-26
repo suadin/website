@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Npgsql;
 using Suadin.Areas.Identity;
 using Suadin.Data;
 using Suadin.Services;
@@ -27,10 +26,7 @@ namespace Suadin
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration["PostgreSql:ConnectionString"];
-            var dbPassword = Configuration["PostgreSql:DbPassword"];
-            var builder = new NpgsqlConnectionStringBuilder(connectionString){Password = dbPassword};
-            services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(builder.ConnectionString));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase(databaseName: "suadin.de"));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -80,10 +76,10 @@ namespace Suadin
             });
 
             // auto-migrate database
-            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                scope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.Migrate();
-            }
+            //using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            //{
+            //    scope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.Migrate();
+            //}
         }
     }
 }
