@@ -25,7 +25,7 @@ namespace Suadin.Services
 
             var client = new SmtpClient(configuration["Smtp:Host"]);
             client.Port = int.Parse(configuration["Smtp:Port"]);
-            client.Credentials = new System.Net.NetworkCredential(configuration["Smtp:User"], configuration["Smtp:Password"]);
+            client.Credentials = new System.Net.NetworkCredential(configuration["Smtp:User"], configuration["SmtpPassword"]);
             client.EnableSsl = true;
             client.SendCompleted += (s, e) => {
                 client.Dispose();

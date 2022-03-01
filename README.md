@@ -19,7 +19,7 @@
 * PostgreSQL Client: for example `choco install pgadmin4`
 * Dev-Certificate: `dotnet dev-certs https --trust`
 * Entity Framework Core Tools: `dotnet tool install --global dotnet-ef`
-* Secrets: `PostgreSql:DbPassword`, `Authentication:Google:ClientSecret`, `SmtpPassword`
+* Secrets: `SmtpPassword`
 
 ## Getting Started
 * start docker

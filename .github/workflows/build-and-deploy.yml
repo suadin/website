@@ -44,8 +44,6 @@ jobs:
           push: true
           tags: ${{ steps.github-meta.outputs.tags }}
           labels: ${{ steps.github-meta.outputs.labels }}
-          
-          
       - name: login dockerhub
         uses: docker/login-action@v1
         with:
@@ -64,16 +62,3 @@ jobs:
           push: true
           tags: ${{ steps.meta-dockerhub.outputs.tags }}
           labels: ${{ steps.meta-dockerhub.outputs.labels }}
-      - name: deploy docker image to server
-        uses: appleboy/ssh-action@master
-        with:
-          host: suadin.de
-          username: docker
-          password: ${{ secrets.SERVER_PASSWORD }}
-          port: 22
-          script: |
-            cd ~
-            docker stop suadin.de
-            docker rm suadin.de
-            docker pull 4324324324324324324/suadin.de:main
-            ./deploy.sh

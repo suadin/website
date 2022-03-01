@@ -35,12 +35,12 @@ namespace Suadin
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddSingleton<WeatherForecastService>();
-            services.AddAuthentication()
-                .AddGoogle(o =>
-                {
-                    o.ClientId = Configuration["Authentication:Google:ClientId"];
-                    o.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-                });
+            //services.AddAuthentication()
+            //    .AddGoogle(o =>
+            //    {
+            //        o.ClientId = Configuration["Authentication:Google:ClientId"];
+            //        o.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+            //    });
             services.AddHttpContextAccessor();
             services.AddTransient<IEmailSender, EmailSender>();
         }
